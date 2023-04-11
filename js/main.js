@@ -24,6 +24,7 @@ class Persona {
         <div class="card-header">${this.name}</div>
         <div class="card-body text-primary">
           <h5 class="card-title">${this.email}</h5>
+          <p class="card-text"><strong>${this.resume}</strong></p>
           <p class="card-text"><strong>${this.age}</strong></p>
         </div>`
         );
@@ -32,7 +33,7 @@ class Persona {
 }// las clases para identificarlo con la primera en mayuscula y objetos en minuscula// class persona
 
 class Employee extends Persona{
-    departamento ="";
+    departamento =" ";
     salario = 0.0;
     constructor(name, email, age, resume, departamento, salario){
         super(name, email, age, resume);
