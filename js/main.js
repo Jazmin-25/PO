@@ -54,13 +54,24 @@ class Employee extends Persona{
           `);
 
         //console.log(this.departamento, this.salario, this.calculateSalary());
-    }//printInfo
+}//printInfo
 }// class Employee
 //lass Employee
-let maritere = new Employee("Maritere Hernandez", "maritere@gmail.com", 21, "Java FullStack Developer", "IT", 1255.20);
+/*let maritere = new Employee("Maritere Hernandez", "maritere@gmail.com", 21, "Java FullStack Developer", "IT", 1255.20);
 let dora = new Employee("Dora Garcia", "dorag@gmail.com", 26, "FullStack Developer", "Development", 1115.25);
 let valeria = new Employee("Valeria Arqueta", "valeri@gmail.com", 24, "Fullstack Java Developer", "Development", 1205.12);
 maritere.printInfo(divEmployees);
 dora.printInfo(divEmployees);
 valeria.printInfo(divEmployees);
 Persona.printTotal();// 3 personas
+*/
+let employees = [];
+employees.push(
+    new Employee("Maritere Hernandez", "maritere@gmail.com", 25, "Java FullStack Developer", "IT", 1255.20),
+    new Employee("Dora Garcia", "dorag@gmail.com", 26, "FullStack Developer", "Development", 1115.25),
+    new Employee("Valeria Arqueta", "valeri@gmail.com", 24, "Fullstack Java Developer", "Development", 1205.12),
+    new Employee("Aridna Islas", "arichan@gmail.com", 24, "Fullstack Java Developer", "Development", 1505.12),
+    new Employee("Javier Sanchez", "javiersts@gmail.com", 34, "Fullstack Java Developer", "Development", 105.12)
+);
+
+employees.forEach(e => e.printInfo(divEmployees)  );
