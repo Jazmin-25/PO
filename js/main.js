@@ -18,9 +18,9 @@ class Persona {
         console.log(Persona.total);
     }//printTotal
 
-    printInfo(div){// metodo
+    printInfo(div){// metodo //se le pone el id para que cada card tenga su id, es decir card 1, 2 y 3
         div.insertAdjacentHTML("beforeend",
-        `<div class="card border-primary mb-3" style="max-width: 18rem;">
+        `<div id="card_${this.id}" class="card border-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">${this.name}</div>
         <div class="card-body text-primary">
           <h5 class="card-title">${this.email}</h5>
@@ -45,13 +45,20 @@ class Employee extends Persona{
 
     printInfo(div){
         super.printInfo(div);
-        console.log(this.departamento, this.salario, this.calculateSalary());
+        let cardBody = document.getElementById(`card_${this.id}`)
+        .getElementsByClassName("card-body")[0];
+        cardBody.insertAdjacentHTML("beforeend",`
+          <p class="card-text">${this.departamento}</p>
+          <p class="card-text text-end"><strong>${this.calculateSalary()}</strong></p>
+          `);
+
+        //console.log(this.departamento, this.salario, this.calculateSalary());
     }//printInfo
 }// class Employee
-
+//lass Employee
 let maritere = new Employee("Maritere Hernandez", "maritere@gmail.com", 21, "Java FullStack Developer", "IT", 1255.20);
 let dora = new Employee("Dora Garcia", "dorag@gmail.com", 26, "FullStack Developer", "Development", 1115.25);
-let valeria = new Employee("Valeria", "valeri@gmail.com", 24, "Fullstack Java Developer", "Development", 1205.12);
+let valeria = new Employee("Valeria Arqueta", "valeri@gmail.com", 24, "Fullstack Java Developer", "Development", 1205.12);
 maritere.printInfo(divEmployees);
 dora.printInfo(divEmployees);
 valeria.printInfo(divEmployees);
